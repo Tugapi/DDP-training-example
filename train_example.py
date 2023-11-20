@@ -23,7 +23,7 @@ parser.add_argument('--print_freq', type=int, default=5, help='number of epochs 
 parser.add_argument('--save_freq', type=int, default=5, help='number of epochs between saving training results')
 
 # DDP options
-parser.add_argument('--local_rank', typr=int, default=-1, help='local device id on current node')
+parser.add_argument('--local_rank', type=int, default=-1, help='local device id on current node')
 
 train_dataset = datasets.FashionMNIST(
     root="data",
@@ -136,4 +136,4 @@ if __name__ == '__main__':
 ## Bash运行
 # DDP: 使用torch.distributed.launch启动DDP模式
 # 使用CUDA_VISIBLE_DEVICES，来决定使用哪些GPU
-# CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node 2 main.py
+# CUDA_VISIBLE_DEVICES="0,1" python -m torch.distributed.launch --nproc_per_node 2 filename.py
